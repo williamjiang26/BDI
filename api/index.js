@@ -7,8 +7,9 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 dotenv.config();
 
+// mongodb://localhost/project2
 mongoose
-  .connect(process.env.MONGO)
+  .connect("process.env.MONGO")
   .then(() => {
     console.log('Connected to MongoDB');
   })

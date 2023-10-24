@@ -20,8 +20,8 @@ export default function App() {
         <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        <Route path = "/bdi" element={<BDI/>} /> 
         <Route element={<PrivateRoute />}>
+          <Route path = "/bdi" element={<BDI/>} /> 
           <Route path='/profile' element={<Profile />} />
         </Route>
          
