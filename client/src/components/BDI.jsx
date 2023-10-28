@@ -28,6 +28,7 @@ let num = 0
 export default function BDI(){
     const [sum, setSum] = useState(0)
     const [question, setQuestion] = useState(list[num])
+    const [count, setCount] = useState(0)
     let content;
     try {
         content = 
@@ -35,7 +36,7 @@ export default function BDI(){
             <h4>Beck's Depression Inventory</h4>
             <h4>Counter: {sum}</h4>
             <div>
-                <Question text='Question'/>
+                <>Question {count}:</>
                 <br/>
                 <Choices text = {question[0]} onSquareClick={() => handleClick(0)}/>
                 <br/>
@@ -55,6 +56,7 @@ export default function BDI(){
             num += 1
             setQuestion(list[num])
             setSum(sum + i)
+            setCount(count + 1)
     }
     return (content)
   }
