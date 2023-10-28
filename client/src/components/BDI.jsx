@@ -61,13 +61,6 @@ export default function BDI(){
     return (content)
   }
   
-  function Question({text}){
-    return (
-        <h4>
-            <label for="name">{text}</label>
-        </h4> 
-    )
-  }
   
   function Choices({text, onSquareClick}){
     
