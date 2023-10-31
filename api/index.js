@@ -6,7 +6,8 @@ import authRoutes from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 dotenv.config();
-console.log(process.env.MONGO)
+// console.log(process.env.MONGO)
+
 mongoose
   .connect('mongodb+srv://wj2065:Dinwiddie26@cluster0.zqepzzf.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
