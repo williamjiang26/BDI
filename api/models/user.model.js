@@ -25,6 +25,38 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model('User', userSchema);
+const feedbackSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    feedback: {
+      type: String,
+      required: true,
+      unique: true,
+    }
+  }
+)
 
+const scoreSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    score: {
+      type: Number,
+      required: true,
+      unique: true,
+    }
+  }
+)
+
+const User = mongoose.model('User', userSchema);
+export const Feedback = mongoose.model('Feedback', feedbackSchema);
+export const Score = mongoose.model('Score', scoreSchema);
 export default User;
+

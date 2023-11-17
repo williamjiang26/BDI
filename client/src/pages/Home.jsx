@@ -1,28 +1,70 @@
 import React from 'react';
+import { useState } from 'react';
 
+function Feedback(){
+  //post
+  const [formData, setFormData] = useState({});
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+   
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/user/feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    const data = await res.json();   
+    console.log(data)
+  };
+
+  return (<>
+    <form onSubmit={handleSubmit} className=''>
+        <input
+          type='text'
+          placeholder='user'
+          id='username'
+          className=''
+          onChange={handleChange}
+        />
+        <input
+          type='text'
+          placeholder='Write Here'
+          id='feedback'
+          className=''
+          onChange={handleChange}
+        />
+        <input
+          type='submit'
+        />
+      </form>
+  </>)
+}
 export default function Home() {
   return (
     <div className='px-4 py-12 max-w-2xl mx-auto'>
       <h1 className='text-3xl font-bold  mb-4 text-slate-800'>
-        Welcome to my Auth App!
+        Welcome to Mobile Depression Therapy!
       </h1>
       <p className='mb-4 text-slate-700'>
-        This is a full-stack web application built with the MERN (MongoDB,
-        Express, React, Node.js) stack. It includes authentication features that
-        allow users to sign up, log in, and log out, and provides access to
-        protected routes only for authenticated users.
+        My name is Qilin and I will be your own personalized online therapist.
+        This is a safe space to display your emotions. 
       </p>
       <p className='mb-4 text-slate-700'>
-        The front-end of the application is built with React and uses React
-        Router for client-side routing. The back-end is built with Node.js and
-        Express, and uses MongoDB as the database. Authentication is implemented
-        using JSON Web Tokens (JWT).
+        We have all the resources you need. Setting goals, chatting with someone, accessing your mental states. 
       </p>
       <p className='mb-4 text-slate-700'>
-        This application is intended as a starting point for building full-stack
-        web applications with authentication using the MERN stack. Feel free to
-        use it as a template for your own projects!
+        We recognize that everyone is different and have different needs when dealing with their mental health. 
+        Therefore we offer customizable paths and features only for you. Your therapist is the only one in the world. 
       </p>
+      <p className='mb-4 text-slate-700'>
+        We would love to get your feedback on anything from features you wish were added to things we can improve on. 
+      </p>
+      <Feedback/>
     </div>
   );
 }

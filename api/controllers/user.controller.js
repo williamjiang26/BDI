@@ -1,4 +1,5 @@
 import User from '../models/user.model.js';
+import { Feedback, Score } from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 import bcryptjs from 'bcryptjs';
 
@@ -53,4 +54,26 @@ export const deleteUser = async (req, res, next) => {
     next(error);
   }
 
+}
+
+// update feedback
+export const submitFeedback = async (req, res, next) => {
+  const newFeedback = new Feedback(req.body);
+  try {
+    await newFeedback.save();
+    res.status(201).json({ message: 'Feedback created successfully' });
+  } catch (error) {
+    next(error);
+  }
+}
+
+// post score
+export const submitScore = async (req, res, next) => {
+  const newScore = new Score(req.body);
+  try {
+    await newScore.save();
+    res.status(201).json({ message: 'Score created successfully' });
+  } catch (error) {
+    next(error);
+  }
 }

@@ -70,11 +70,39 @@ export default function BDI(){
   }
 
   function Submit({total}){    
-    function handleClick(){
-        //log data into database
-        alert('Your score is ' + total)
-    }
-    return (
-        <a href="/tracking" className="btn btn-white btn-animate" onClick={handleClick}>submit</a>
-    )
-  }
+    //log data into database
+    const [formData, setFormData] = useState({});
+    const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        formData['score'] = total
+        console.log(formData)
+        const res = await fetch('/api/user/score', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+        });
+        const data = await res.json();   
+        console.log(data)
+    };
+    
+    return (<>
+            <input
+            type='text'
+            placeholder='user'
+            id='username'
+            className=''
+            onChange={handleChange}
+            />
+            <a href="/tracking" className="btn btn-white btn-animate" onClick={handleSubmit}>submit</a>
+    </>)
+}
+    
+
+
+
+
