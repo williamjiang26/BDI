@@ -6,25 +6,22 @@ import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
-import BDI from './components/BDI'
-
-
+import BDI from './pages/BDI'
+import BDI2 from './pages/BDI2'
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* header */}
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
+        <Route path = "/bdi" element={<BDI2/>} /> 
         <Route element={<PrivateRoute />}>
-          <Route path = "/bdi" element={<BDI/>} /> 
           <Route path='/profile' element={<Profile />} />
         </Route>
-         
       </Routes>
     </BrowserRouter>
   );
