@@ -1,7 +1,7 @@
 # BDI
 todo
-- log score into database
 - create a graph that tracks
+- fix web flow
 notes
 - more features
     - chatting using web sockets open chatting w whole school

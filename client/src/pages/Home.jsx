@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Feedback(){
   //post
@@ -8,9 +9,10 @@ function Feedback(){
     setFormData({ ...formData, [e.target.id]: e.target.value });
    
   };
-
+  const { currentUser } = useSelector((state) => state.user);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    formData['username'] = currentUser.email
     const res = await fetch('/api/user/feedback', {
       method: 'POST',
       headers: {
@@ -24,13 +26,6 @@ function Feedback(){
 
   return (<>
     <form onSubmit={handleSubmit} className=''>
-        <input
-          type='text'
-          placeholder='user'
-          id='username'
-          className=''
-          onChange={handleChange}
-        />
         <input
           type='text'
           placeholder='Write Here'

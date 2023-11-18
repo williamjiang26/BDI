@@ -37,7 +37,8 @@ const feedbackSchema = new mongoose.Schema(
       required: true,
       unique: true,
     }
-  }
+  },
+  { timestamps: true }
 )
 
 const scoreSchema = new mongoose.Schema(
@@ -45,14 +46,13 @@ const scoreSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true,
-      unique: true,
     },
     score: {
       type: Number,
       required: true,
-      unique: true,
     }
-  }
+  },
+  { timestamps: true }
 )
 
 const User = mongoose.model('User', userSchema);

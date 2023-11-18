@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useSelector } from 'react-redux';
 
 const list = [
 ['I do not feel sad.','I feel sad','I am sad all the time and I can\'t snap out of it. ','I am so sad and unhappy that I can\'t stand it.'],
@@ -71,14 +72,13 @@ export default function BDI(){
 
   function Submit({total}){    
     //log data into database
-    const [formData, setFormData] = useState({});
-    const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-    };
+    const { currentUser } = useSelector((state) => state.user);
+    let formData = {};
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         formData['score'] = total
-        console.log(formData)
+        formData['username'] = currentUser.email
         const res = await fetch('/api/user/score', {
         method: 'POST',
         headers: {
@@ -91,14 +91,7 @@ export default function BDI(){
     };
     
     return (<>
-            <input
-            type='text'
-            placeholder='user'
-            id='username'
-            className=''
-            onChange={handleChange}
-            />
-            <a href="/tracking" className="btn btn-white btn-animate" onClick={handleSubmit}>submit</a>
+        <a href="/tracking" className="btn btn-white btn-animate" onClick={handleSubmit}>submit</a>
     </>)
 }
     
