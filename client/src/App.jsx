@@ -7,7 +7,12 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
 import BDI from './pages/BDI'
-import BDI2 from './pages/BDI2'
+import ContactUs from './pages/Contact';
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+Chart.register(CategoryScale);
+import Graph from './pages/Graph'
+
 
 export default function App() {
   return (
@@ -18,10 +23,11 @@ export default function App() {
         <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        
-        <Route path = "/bdi" element={<BDI/>} /> 
+        <Route path='/graph' element={<Graph />} />
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
+          <Route path = "/bdi" element={<BDI/>} /> 
+          <Route path = "/contact" element={<ContactUs/>} /> 
         </Route>
       </Routes>
     </BrowserRouter>

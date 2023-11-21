@@ -1,5 +1,5 @@
 import User from '../models/user.model.js';
-import { Feedback, Score } from '../models/user.model.js';
+import { Comment, Score } from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 import bcryptjs from 'bcryptjs';
 
@@ -58,7 +58,7 @@ export const deleteUser = async (req, res, next) => {
 
 // update feedback
 export const submitFeedback = async (req, res, next) => {
-  const newFeedback = new Feedback(req.body);
+  const newFeedback = new Comment(req.body);
   try {
     await newFeedback.save();
     res.status(201).json({ message: 'Feedback created successfully' });
@@ -77,3 +77,18 @@ export const submitScore = async (req, res, next) => {
     next(error);
   }
 }
+
+//get scores 
+export const fetchScores = async (req, res, next) => {
+  const userId = req.params; // Extract userId from params
+  console.log(req.body)
+  try {
+    const scores = await Score.find({ username: userId }); // Fetch scores based on userId
+    if (!scores || scores.length === 0) {
+      return next(errorHandler(404, 'Scores not found for this user'));
+    }
+    res.status(200).json({scores});
+  } catch (error) {
+    next(error);
+  }
+};

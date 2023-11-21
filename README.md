@@ -2,6 +2,8 @@
 todo
 - create a graph that tracks
 - fix web flow
+- create redirect pages after submitting forms
+
 notes
 - more features
     - chatting using web sockets open chatting w whole school

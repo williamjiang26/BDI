@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link , useNavigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const list = [
@@ -74,7 +75,7 @@ export default function BDI(){
     //log data into database
     const { currentUser } = useSelector((state) => state.user);
     let formData = {};
-    
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         formData['score'] = total
@@ -88,11 +89,14 @@ export default function BDI(){
         });
         const data = await res.json();   
         console.log(data)
+        navigate('/')
     };
     
-    return (<>
-        <a href="/tracking" className="btn btn-white btn-animate" onClick={handleSubmit}>submit</a>
-    </>)
+    return (
+    <>
+        <a href="" className="btn btn-white btn-animate" onClick={handleSubmit}>Submit</a> 
+    </>  
+    )
 }
     
 

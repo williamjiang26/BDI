@@ -20,6 +20,12 @@ export default function Header() {
               <Link to='/bdi'>
                 <li><a alt='BDI'>BDI</a></li>
               </Link>
+              <Link to='/contact'>
+                <li><a alt='Contact Us'>Contact Us</a></li>
+              </Link>
+              <Link to='/graph'>
+                <li><a alt='Graph'>Graph</a></li>
+              </Link>
 
               <Link to='/profile'>
                 {currentUser ? (
