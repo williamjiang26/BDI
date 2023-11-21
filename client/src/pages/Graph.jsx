@@ -4,76 +4,80 @@ import {Line} from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 
 
-function App() {
+
+
+
+
+export default function Emilio(){
     const [scores, setScores] = useState([]);
+    const [dates, setDates] = useState([]);
+    let state = {
+      labels: dates,
+      datasets: [
+          {
+          label: 'Depression Levels',
+          fill: false,
+          lineTension: 0,
+          backgroundColor: 'rgba(75,192,192,1)',
+          borderColor: 'rgba(0,0,0,1)',
+          borderWidth: 2,
+          data: scores
+          }
+      ]
+    }
     const { currentUser } = useSelector((state) => state.user);
     const userId = currentUser.email; // Assuming the user's email is the userId
   
-    useEffect(() => {
-      const getScores = async () => {
-        try {
-          const res = await fetch(`/api/user/graph`);
-          const data = await res.json();
-          console.log(data)
-          if (res.ok) {
-            setScores(data.scores);
-          } else {
-            console.error('Failed to fetch scores:', data.error);
-          }
-        } catch (error) {
-          console.error('Error fetching scores:', error);
+    const handleFetch = async (e) => {
+      e.preventDefault();
+      try {
+        const res = await fetch('/api/user/graph', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username: userId})
+        });
+        const data = await res.json();
+        const array = data.data
+        if (res.ok) {
+          setScores(array.map(x => x.score));
+          setDates(array.map(x => x.createdAt))
+          console.log(state)
+        } else {
+          console.error('Failed to fetch scores:', data.error);
         }
-      };
-  
-      getScores();
-    }, [userId]); // Add userId to dependency array to re-fetch scores when userId changes
-  
-    return (
-      <div>
-        {scores.map((score, index) => (
-          <div key={index}>{/* Render score details here */}</div>
-        ))}
-      </div>
-    );
-  }
-  
-const state = {
-labels: ['January', 'February', 'March',
-        'April', 'May'],
-datasets: [
-    {
-    label: 'Rainfall',
-    fill: false,
-    lineTension: 0.5,
-    backgroundColor: 'rgba(75,192,192,1)',
-    borderColor: 'rgba(0,0,0,1)',
-    borderWidth: 2,
-    data: [65, 59, 80, 81, 56]
+      } catch (error) {
+        console.error('Error fetching scores:', error);
+      }
+    };
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <Line
+              data={state}
+              options={{
+                title:{
+                  display:true,
+                  text:'Average Rainfall per month',
+                  fontSize:20
+                },
+                legend:{
+                  display:true,
+                  position:'right'
+                }
+              }}
+            />
+          </div>
+        );
+      }
     }
-]
+    
+  return (<>
+  <button className = 'bg-red' onClick={handleFetch}>Fetch</button>
+  <App/>
+  </>)
 }
 
-// export default class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <Line
-//           data={state}
-//           options={{
-//             title:{
-//               display:true,
-//               text:'Average Rainfall per month',
-//               fontSize:20
-//             },
-//             legend:{
-//               display:true,
-//               position:'right'
-//             }
-//           }}
-//         />
-//       </div>
-//     );
-//   }
-// }
 
-export default App;

@@ -10,7 +10,6 @@ export const test = (req, res) => {
 };
 
 // update user
-
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.id) {
     return next(errorHandler(401, 'You can update only your account!'));
@@ -41,8 +40,6 @@ export const updateUser = async (req, res, next) => {
 
 
 // delete user
-
-
 export const deleteUser = async (req, res, next) => {
   if (req.user.id !== req.params.id) {
     return next(errorHandler(401, 'You can delete only your account!'));
@@ -53,7 +50,6 @@ export const deleteUser = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-
 }
 
 // update feedback
@@ -69,6 +65,7 @@ export const submitFeedback = async (req, res, next) => {
 
 // post score
 export const submitScore = async (req, res, next) => {
+  const data = await Score.find({username: 'willwonder31@gmail.com'})
   const newScore = new Score(req.body);
   try {
     await newScore.save();
@@ -79,16 +76,13 @@ export const submitScore = async (req, res, next) => {
 }
 
 //get scores 
-export const fetchScores = async (req, res, next) => {
-  const userId = req.params; // Extract userId from params
-  console.log(req.body)
+export const getScore = async (req, res, next) => {
+  
+  const data = await Score.find(req.body)
+  // console.log(data)
   try {
-    const scores = await Score.find({ username: userId }); // Fetch scores based on userId
-    if (!scores || scores.length === 0) {
-      return next(errorHandler(404, 'Scores not found for this user'));
-    }
-    res.status(200).json({scores});
+    res.status(201).json({data: data});
   } catch (error) {
     next(error);
   }
-};
+}
