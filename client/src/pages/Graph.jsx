@@ -75,7 +75,9 @@ export default function Emilio(){
     }
     
   return (<>
-  <button className = 'bg-red' onClick={handleFetch}>Fetch</button>
+  <button className='text-white border-2 border-white rounded-lg p-2 uppercase hover:opacity-95' onClick={handleFetch}>
+    Fetch
+  </button>
   <App/>
   </>)
 }

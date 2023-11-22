@@ -23,10 +23,10 @@ export default function App() {
         <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/graph' element={<Graph />} />
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
           <Route path = "/bdi" element={<BDI/>} /> 
+          <Route path='/graph' element={<Graph />} />
           <Route path = "/contact" element={<ContactUs/>} /> 
         </Route>
       </Routes>
