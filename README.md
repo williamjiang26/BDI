@@ -16,5 +16,3 @@ notes
             - hire ppl to compile videos
     - writers/bloggers
     - goal setting and goal maintenance and tracking, checkmarks, cool ui
-
-- more technical?
