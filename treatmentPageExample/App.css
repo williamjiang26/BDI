@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-color: rgb(34, 34, 34);
+  color: white;
+}
+
+a{
+  color :aqua;
+}
+
+iframe{
+  margin-bottom: 3em;
+}
+
+.treatment{
+  margin-left: 3em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description{
+  margin-left: 7em;
+  margin-right: 7em;
+}
