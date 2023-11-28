@@ -26,6 +26,9 @@ export default function Header() {
               <Link to='/graph'>
                 <li><a alt='Graph'>Graph</a></li>
               </Link>
+              <Link to='/treatments'>
+                <li><a alt='Treatments'>Treatments</a></li>
+              </Link>
 
               <Link to='/profile'>
                 {currentUser ? (

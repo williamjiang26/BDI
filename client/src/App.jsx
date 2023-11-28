@@ -12,6 +12,9 @@ import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale);
 import Graph from './pages/Graph'
+import Graph2 from './pages/Graph2'
+import Treatments from './pages/Treatment';
+import Treatment1 from './pages/Treatments/1b';
 
 
 export default function App() {
@@ -20,15 +23,18 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/graph2' element={<Graph2 />} />
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
           <Route path = "/bdi" element={<BDI/>} /> 
           <Route path='/graph' element={<Graph />} />
           <Route path = "/contact" element={<ContactUs/>} /> 
+          <Route path = "/treatments" element={<Treatments/>} /> 
+          <Route path = "/treatment1" element={<Treatment1/>} /> 
         </Route>
+        <Route path='/about' element={<About />} />
       </Routes>
     </BrowserRouter>
   );

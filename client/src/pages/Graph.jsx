@@ -5,10 +5,7 @@ import { useState, useEffect } from 'react';
 
 
 
-
-
-
-export default function Emilio(){
+export default function Graph(){
     const [scores, setScores] = useState([]);
     const [dates, setDates] = useState([]);
     let state = {

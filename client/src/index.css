@@ -12,7 +12,60 @@ body {
     text-align: center
     ;
 }
+/* page styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
 
+img {
+  width: 300px; /* Adjust image width as needed */
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.content {
+  margin-right: 320px; /* Account for image width and some extra space */
+}
+
+.description {
+  /* Ensure text wraps around the image */
+  overflow: hidden;
+}
+
+.video-container {
+  clear: both;
+  margin-top: 20px;
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+/* pagestyleends */
+a{
+  color :aqua;
+}
+
+iframe{
+  margin-bottom: 3em;
+}
+
+.treatment{
+  margin-left: 3em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description{
+  margin-left: 7em;
+  margin-right: 7em;
+}
 
 /* navbar css */
 div.container
