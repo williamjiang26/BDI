@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
         }else if (data.scoreCounter == 1){
             navigate('/borderline3')
         }else if (data.scoreCounter == 2){
-            navigate('/borderine2')
+            navigate('/borderline2')
         }else{
             navigate('/borderline4')
         }
