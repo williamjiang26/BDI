@@ -82,9 +82,6 @@ const handleSubmit = async (e) => {
     formData['time'] = new Date().toISOString()
     formData['id'] = currentUser._id
     formData['sCounter'] = currentUser.scoreCounter
-
-    console.log(formData)
-
     const res = await fetch(`api/user/score`, {
         method: 'POST',
         headers: {
@@ -93,17 +90,18 @@ const handleSubmit = async (e) => {
         body: JSON.stringify(formData),
     });
     const data = await res.json();   
-    console.log(data)
+    console.log('client',data.scoreCounter)
 
     // between 0 and 21
     // 22 and 42
     //43 and 63
+   
     if (total >= 43){
-        if (data.scoreCounter == 0){
+        if ( data.scoreCounter == 0){
             navigate('/moderate1')
-        }else if (data.scoreCounter == 1){
+        }else if ( data.scoreCounter == 1){
             navigate('/moderate2')
-        }else if (data.scoreCounter == 2){
+        }else if ( data.scoreCounter == 2){
             navigate('/moderate3')
         }else{
             navigate('/moderate4')

@@ -77,10 +77,9 @@ export const submitScore = async (req, res, next) => {
         },
         { new: true }
     );
-    console.log(updatedUser)
 
     try {
-      res.status(200).json({ message: 'Score updated successfully' });
+      res.status(200).json(updatedUser);
     } catch (error) {
       next(error);
     }
@@ -89,7 +88,6 @@ export const submitScore = async (req, res, next) => {
 //get scores 
 export const getScore = async (req, res, next) => {
   const data = await User.findById(req.body)
-  console.log(data)
   try {
     res.status(201).json({data: data});
   } catch (error) {
