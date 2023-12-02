@@ -1,5 +1,7 @@
 import React from "react"
 import lionImage from '../../images/lion.jpeg'
+import {TreatmentHeader} from '../../components/Header';
+
 export default function App(){
     return(
         <div class="container">
@@ -45,6 +47,7 @@ export default function App(){
                     src="https://www.youtube.com/embed/bcW6HOJr5Cg?si=IQZa55O6ESHxW_eW">
                 </iframe>
             </div>
+            <TreatmentHeader/>
         </div>
 
     )

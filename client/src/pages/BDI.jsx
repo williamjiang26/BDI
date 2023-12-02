@@ -64,45 +64,85 @@ export default function BDI(){
   }
   
   
-  function Choices({text, onSquareClick}){
-    
-    return (
-        <a href="#" className="btn btn-white btn-animate" onClick={onSquareClick}>{text}</a>
-    )
-  }
+function Choices({text, onSquareClick}){
 
-  function Submit({total}){    
-    //log data into database
-    const { currentUser } = useSelector((state) => state.user);
-    let formData = {};
-    const navigate = useNavigate();
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        formData['score'] = total
-        formData['time'] = new Date().toISOString()
-        formData['id'] = currentUser._id
-        formData['sCounter'] = currentUser.scoreCounter
+return (
+    <a href="#" className="btn btn-white btn-animate" onClick={onSquareClick}>{text}</a>
+)
+}
 
-        console.log(formData)
+function Submit({total}){    
+//log data into database
+const { currentUser } = useSelector((state) => state.user);
+let formData = {};
+const navigate = useNavigate();
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    formData['score'] = total
+    formData['time'] = new Date().toISOString()
+    formData['id'] = currentUser._id
+    formData['sCounter'] = currentUser.scoreCounter
 
-        const res = await fetch(`api/user/score`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
-        const data = await res.json();   
-        console.log(data)
+    console.log(formData)
 
+    const res = await fetch(`api/user/score`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    });
+    const data = await res.json();   
+    console.log(data)
+
+    // between 0 and 21
+    // 22 and 42
+    //43 and 63
+    if (total >= 43){
+        if (data.scoreCounter == 0){
+            navigate('/moderate1')
+        }else if (data.scoreCounter == 1){
+            navigate('/moderate2')
+        }else if (data.scoreCounter == 2){
+            navigate('/moderate3')
+        }else{
+            navigate('/moderate4')
+        }
+        
+    }else if (total >= 22){
+        if (data.scoreCounter == 0){
+            navigate('/borderline1')
+        }else if (data.scoreCounter == 1){
+            navigate('/borderline3')
+        }else if (data.scoreCounter == 2){
+            navigate('/borderine2')
+        }else{
+            navigate('/borderline4')
+        }
+        
+    }else if (total >= 0){
+        if (data.scoreCounter == 0){
+            navigate('/mild1')
+        }else if (data.scoreCounter == 1){
+            navigate('/mild2')
+        }else if (data.scoreCounter == 2){
+            navigate('/mild3')
+        }else {
+            navigate('/mild4')
+        }
+        
+    }else{
         navigate('/')
-    };
+    }
     
-    return (
-    <>
-        <a href="" className="btn btn-white btn-animate" onClick={handleSubmit}>Submit</a> 
-    </>  
-    )
+    
+};
+
+return (
+<>
+    <a href="" className="btn btn-white btn-animate" onClick={handleSubmit}>Submit</a> 
+</>  
+)
 }
     
 

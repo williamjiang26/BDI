@@ -1,7 +1,5 @@
 # BDI
 todo
-- create a graph that tracks
-- fix web flow
 - create redirect pages after submitting forms
 
 notes
