@@ -1,17 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../../../client/src/pages/Home';
-import About from '../../../client/src/pages/About';
-import SignIn from '../../../client/src/pages/SignIn';
-import SignUp from '../../../client/src/pages/SignUp';
-import Profile from '../../../client/src/pages/Profile';
-import Header from '../../../client/src/components/Header';
-import PrivateRoute from '../../../client/src/components/PrivateRoute';
-import BDI from '../../../client/src/pages/BDI'
-import ContactUs from '../../../client/src/pages/Contact';
+import Home from './pages/Home';
+import About from './pages/About';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
+import Header from './components/Header';
+import PrivateRoute from './components/PrivateRoute';
+import BDI from './pages/BDI'
+import ContactUs from './pages/Contact';
 import  Chart  from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale);
-import Graph2 from '../../../client/src/pages/Graph2'
+import Graph2 from './pages/Graph2'
 import Treatments from './pages/Treatment';
 import Moderate1 from './pages/Treatments/Moderate1'
 import Moderate2 from './pages/Treatments/Moderate2'
