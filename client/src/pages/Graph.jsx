@@ -1,82 +1,119 @@
 import React from 'react';
+import { useState } from 'react';
+import Plot from 'react-plotly.js';
 import { useSelector } from 'react-redux';
-import {Line} from 'react-chartjs-2';
-import { useState, useEffect } from 'react';
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+// We need to insert bdi scores and time dates into bdiData.x and bdiData.y
 
 
 
-export default function Graph(){
+function App() {
     const [scores, setScores] = useState([]);
     const [dates, setDates] = useState([]);
-    let state = {
-      labels: dates,
-      datasets: [
-          {
-          label: 'Depression Levels',
-          fill: false,
-          lineTension: 0,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
-          borderWidth: 2,
-          data: scores
-          }
-      ]
-    }
-    const { currentUser } = useSelector((state) => state.user);
-    const userId = currentUser.email; // Assuming the user's email is the userId
-  
-    const handleFetch = async (e) => {
-      e.preventDefault();
-      try {
-        const res = await fetch('/api/user/graph', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({username: userId})
-        });
-        const data = await res.json();
-        const array = data.data
-        if (res.ok) {
-          setScores(array.map(x => x.score));
-          setDates(array.map(x => x.createdAt))
-          console.log(state)
-        } else {
-          console.error('Failed to fetch scores:', data.error);
-        }
-      } catch (error) {
-        console.error('Error fetching scores:', error);
-      }
-    };
-    class App extends React.Component {
-      render() {
-        return (
-          <div>
-            <Line
-              data={state}
-              options={{
-                title:{
-                  display:true,
-                  text:'Average Rainfall per month',
-                  fontSize:20
-                },
-                legend:{
-                  display:true,
-                  position:'right'
-                }
-              }}
-            />
-          </div>
-        );
-      }
+
+    const bdiData = {
+        x: dates,
+        y: scores,
+        type: 'scatter',
+        name: "BDI Score"
     }
     
-  return (<>
-  <button className='text-white border-2 border-white rounded-lg p-2 uppercase hover:opacity-95' onClick={handleFetch}>
-    Fetch
-  </button>
-  <App/>
-  </>)
+    const heatmap = {
+        z: [[1],[2],[3],[4],[5],[6]],
+        x: bdiData.x,
+        opacity: 0,
+        type: 'heatmap',
+        colorbar:{
+            tickmode: 'array',
+            ticktext: ['Minimal', 'Mild', 'Average', 'Moderate', 'Severe', 'Extreme'],
+            tickvals: [1,2,3,4,5,6]
+        }
+    }
+
+
+    const { currentUser } = useSelector((state) => state.user);
+    const userId = currentUser._id; // Assuming the user's email is the userId
+  
+    const handleFetch = async (e) => {
+        e.preventDefault();
+        try {
+          const res = await fetch('/api/user/graph', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({_id: userId})
+          });
+          const data = await res.json();
+          const scoreArray = data.data.bdiScores
+          const dateArray = data.data.bdiScoresDates
+          if (res.ok) {
+            setScores(scoreArray);
+              setDates(dateArray);
+            //console.log(state)
+          } else {
+            console.error('Failed to fetch scores:', data.error);
+          }
+        } catch (error) {
+          console.error('Error fetching scores:', error);
+        }
+      };
+
+
+
+
+  return (
+    <div>
+        <button className='text-white border-2 border-white rounded-lg p-2 uppercase hover:opacity-95' onClick={handleFetch}>
+        Fetch
+        </button>
+        <br/>
+        <br/>
+    <Plot
+        data={[bdiData, heatmap]}
+        layout={
+            {title: "BDI Scores Timeline",
+            xaxis: {
+                title: "BDI Test Date",
+                range: [bdiData.x[0], bdiData.x[bdiData.x.length - 1]],
+                rangeselector: {buttons: [
+                {
+                    count: 1,
+                    label: '1m',
+                    step: 'month',
+                    stepmode: 'backward'
+                },
+                {
+                    count: 3,
+                    label: '3m',
+                    step: 'month',
+                    stepmode: 'backward'
+                },
+                {
+                    count: 6,
+                    label: '6m',
+                    step: 'month',
+                    stepmode: 'backward'
+                },
+                {step: 'all'}
+                ]},
+            rangeslider: {
+                visible: true,
+                range: [bdiData.x[0], bdiData.x[bdiData.x.length - 1]]
+            },
+            type: 'date'
+            },
+            yaxis: { 
+                title: "BDI Score",
+                autorange: true
+            }}
+        }
+    />
+    </div>
+    );
 }
 
-
+export default App;

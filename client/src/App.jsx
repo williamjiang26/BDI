@@ -11,7 +11,7 @@ import ContactUs from './pages/Contact';
 import  Chart  from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale);
-import Graph2 from './pages/Graph2'
+import Graph from './pages/Graph'
 import Treatments from './pages/Treatment';
 import Moderate1 from './pages/Treatments/Moderate1'
 import Moderate2 from './pages/Treatments/Moderate2'
@@ -37,11 +37,10 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/graph2' element={<Graph2 />} />
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
           <Route path = "/bdi" element={<BDI/>} /> 
-          <Route path='/graph' element={<Graph2 />} />
+          <Route path='/graph' element={<Graph />} />
           <Route path = "/contact" element={<ContactUs/>} /> 
           <Route path = "/treatments" element={<Treatments/>} /> 
           <Route path = "/moderate1" element={<Moderate1/>} /> 
