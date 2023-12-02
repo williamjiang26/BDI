@@ -35,7 +35,7 @@ function App() {
 
 
     const { currentUser } = useSelector((state) => state.user);
-    const userId = currentUser.email; // Assuming the user's email is the userId
+    const userId = currentUser._id; // Assuming the user's email is the userId
   
     const handleFetch = async (e) => {
         e.preventDefault();
@@ -45,14 +45,15 @@ function App() {
           headers: {
               'Content-Type': 'application/json',
           },
-          body: JSON.stringify({username: userId})
+          body: JSON.stringify({_id: userId})
           });
           const data = await res.json();
-          const array = data.data
+          const scoreArray = data.data.bdiScores
+          const dateArray = data.data.bdiScoresDates
           if (res.ok) {
-            setScores(array.map(x => x.score));
-            setDates(array.map(x => x.createdAt))
-            console.log(state)
+            setScores(scoreArray);
+              setDates(dateArray);
+            //console.log(state)
           } else {
             console.error('Failed to fetch scores:', data.error);
           }
@@ -69,6 +70,7 @@ function App() {
         <button className='text-white border-2 border-white rounded-lg p-2 uppercase hover:opacity-95' onClick={handleFetch}>
         Fetch
         </button>
+        <br/>
         <br/>
     <Plot
         data={[bdiData, heatmap]}

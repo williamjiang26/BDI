@@ -1,5 +1,5 @@
 import User from '../models/user.model.js';
-import { Comment, Score } from '../models/user.model.js';
+import { Comment } from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 import bcryptjs from 'bcryptjs';
 
@@ -63,23 +63,33 @@ export const submitFeedback = async (req, res, next) => {
   }
 }
 
-// post score
+// update scores
 export const submitScore = async (req, res, next) => {
-  const data = await Score.find({username: 'willwonder31@gmail.com'})
-  const newScore = new Score(req.body);
-  try {
-    await newScore.save();
-    res.status(201).json({ message: 'Score created successfully' });
-  } catch (error) {
-    next(error);
-  }
+    const { score, time, id, sCounter } = req.body;
+    console.log(score, time, id, sCounter)
+    const updatedUser = await User.findByIdAndUpdate({ _id: id },
+        {
+            $push: {
+                bdiScores: score,
+                bdiScoresDates: time,
+            },
+            scoreCounter: sCounter + 1,
+        },
+        { new: true }
+    );
+    console.log(updatedUser)
+
+    try {
+      res.status(200).json({ message: 'Score updated successfully' });
+    } catch (error) {
+      next(error);
+    }
 }
 
 //get scores 
 export const getScore = async (req, res, next) => {
-  
-  const data = await Score.find(req.body)
-  // console.log(data)
+  const data = await User.findById(req.body)
+  console.log(data)
   try {
     res.status(201).json({data: data});
   } catch (error) {

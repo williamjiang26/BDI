@@ -29,7 +29,7 @@ export default function App() {
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
           <Route path = "/bdi" element={<BDI/>} /> 
-          <Route path='/graph' element={<Graph />} />
+          <Route path='/graph' element={<Graph2 />} />
           <Route path = "/contact" element={<ContactUs/>} /> 
           <Route path = "/treatments" element={<Treatments/>} /> 
           <Route path = "/treatment1" element={<Treatment1/>} /> 

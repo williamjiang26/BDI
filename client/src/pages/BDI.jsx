@@ -79,16 +79,22 @@ export default function BDI(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         formData['score'] = total
-        formData['username'] = currentUser.email
-        const res = await fetch('/api/user/score', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        formData['time'] = new Date().toISOString()
+        formData['id'] = currentUser._id
+        formData['sCounter'] = currentUser.scoreCounter
+
+        console.log(formData)
+
+        const res = await fetch(`api/user/score`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
         });
         const data = await res.json();   
         console.log(data)
+
         navigate('/')
     };
     

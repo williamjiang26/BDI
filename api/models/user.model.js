@@ -16,6 +16,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    bdiScores: {
+      type: Array,
+      required: true,
+    },
+    bdiScoresDates: {
+      type: Array,
+      required: true,
+    },
+    scoreCounter: {
+      type: Number,
+      required: true,
+    },
     profilePicture: {
       type: String,
       default:
@@ -41,22 +53,7 @@ const commentSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-const scoreSchema = new mongoose.Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-    },
-    score: {
-      type: Number,
-      required: true,
-    }
-  },
-  { timestamps: true }
-)
-
 const User = mongoose.model('User', userSchema);
 export const Comment = mongoose.model('Comment', commentSchema);
-export const Score = mongoose.model('Score', scoreSchema);
 export default User;
 
