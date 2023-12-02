@@ -21,12 +21,7 @@ body {
 }
 
 img {
-  width: 300px; /* Adjust image width as needed */
-  height: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 10px;
+  width: 150px;
 }
 
 .content {
