@@ -132,7 +132,7 @@ const handleSubmit = async (e) => {
     }else{
         navigate('/')
     }
-    
+    location.reload()
     
 };
 

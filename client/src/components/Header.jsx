@@ -13,15 +13,12 @@ export default function Header() {
             <Link to='/'>
                 <li><a alt='Home'>Home</a></li>
               </Link>
-              <Link to='/about'>
-                <li><a alt='About'>About</a></li>
-              </Link>
               <Link to='/bdi'>
                 <li><a alt='BDI'>BDI</a></li>
               </Link>
-              <Link to='/treatments'>
-            <li><a alt='Treatments'>Treatments</a></li>
-          </Link>
+              <Link to='/about'>
+                <li><a alt='About'>About</a></li>
+              </Link>
               <Link to='/profile'>
                 {currentUser ? (
                   <img src={currentUser.profilePicture} alt='profile' className='h-7 w-7 rounded-full object-cover' />
