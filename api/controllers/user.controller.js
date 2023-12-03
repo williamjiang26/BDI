@@ -66,7 +66,6 @@ export const submitFeedback = async (req, res, next) => {
 // update scores
 export const submitScore = async (req, res, next) => {
     const { score, time, id, sCounter } = req.body;
-    console.log(score, time, id, sCounter)
     const updatedUser = await User.findByIdAndUpdate({ _id: id },
         {
             $push: {

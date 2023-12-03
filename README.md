@@ -1,6 +1,7 @@
 # BDI
 todo
-- create redirect pages after submitting forms
+- carousel
+- treatment pages
 
 notes
 - more features
