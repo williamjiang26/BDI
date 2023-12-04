@@ -35,7 +35,8 @@ import Severe from './pages/Treatments/Severe';
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn />} />
@@ -68,6 +69,7 @@ export default function App() {
         </Route>
         <Route path='/about' element={<About />} />
       </Routes>
+      
     </BrowserRouter>
   );
 }
