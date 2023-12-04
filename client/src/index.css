@@ -12,7 +12,13 @@ body {
     text-align: center
     ;
 }
+.logo{
+  font-size: 1.7em;
+  color: rgba(0, 0, 0, 0.4); 
+  font-family: Segoe UI;
+  margin-left: 1em;
 
+}
 .button-container{
   text-align: center;
 }
@@ -11263,7 +11269,15 @@ body {
   margin-bottom: 5rem;
 }
 .header-section{
-  background: url("../src/images/header.png");
+  background-color: var(--bs-gray-700);
+
+
+}
+.contact-section{
+  
+  background: url("../src/images/image.jpg");
+  background-size: cover; 
+  /* background-position: 70px 70px; */
 
 }
 .treatment-section{

@@ -2,6 +2,7 @@
 todo
 - scroll header
 - favicon
+-add photos
 
 
 notes

@@ -5,11 +5,9 @@ export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <section className='header-section'>
-      <div className="flex justify-between items-center mx-auto p-3 header">
-        <Link to='/'>
-          <h1 className='font-bold' href='/'>Qilin Therapeutics</h1>
-        </Link>
-        <ul className='flex gap-4'>
+      <div className="flex justify-between items-center mx-auto p-3 ">
+      <a href="/" class="font-bold no-underline logo">Qilin Therapeutics</a>       
+       <ul className='flex gap-4'>
           <div className='flex justify-between items-center max-w-6xl mx-auto p-3 highlightTextIn container'>
             <Link to='/'>
               <li><a alt='Home'>Home</a></li>
