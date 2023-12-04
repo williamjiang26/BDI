@@ -26,11 +26,8 @@ export default function Home() {
       to navigate through them. Mobile Depression Therapy is here to offer you a helping hand on your path to mental well-being. Our innovative and user-friendly mobile application is designed to provide convenient access to effective therapeutic tools, empowering you to manage and overcome depression right from the palm of your hand.
       Embrace Healing Anytime, Anywhere
       Say goodbye to traditional barriers to therapy. With Mobile Depression Therapy, you have the freedom to access support whenever and wherever you need it. Our mobile app allows you to engage in therapeutic activities, receive personalized guidance, and track your progress seamlessly from the comfort of your own space.
-      {/* Your Privacy Matters
-      Rest assured, your privacy is our priority. Mobile Depression Therapy is committed to maintaining the confidentiality of your information. Our secure platform ensures that your personal data is protected, allowing you to focus on your well-being with peace of mind.      
-      Join Us on the Path to Wellness
-      Embark on a transformative journey toward mental wellness with Mobile Depression Therapy.  */}
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
+      
+                            
                         </p>
                     </div>
                 </div>
@@ -102,7 +99,10 @@ export default function Home() {
             </div>
         </section>
 
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Qilins Incorporated 2023</div></footer>
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Your Privacy Matters
+      Rest assured, your privacy is our priority. Mobile Depression Therapy is committed to maintaining the confidentiality of your information. Our secure platform ensures that your personal data is protected, allowing you to focus on your well-being with peace of mind.      
+      Join Us on the Path to Wellness
+      Embark on a transformative journey toward mental wellness with Mobile Depression Therapy. Copyright &copy; Qilins Co. 2023</div></footer>
   
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     

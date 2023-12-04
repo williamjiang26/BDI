@@ -1,9 +1,8 @@
 # BDI
 todo
 - scroll header
-- graph 
-- treatment css
-- treatment pages
+- favicon
+
 
 notes
 - more features
