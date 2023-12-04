@@ -42,16 +42,11 @@ export default function Home() {
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                         <h2 class="text-white mb-5">Sign up today and take the first step in reclaiming control over your life. Because your mental health matters, and support is just a tap away.</h2>
                        
-                        <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        
-                            <div class="row input-group-newsletter">
-                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                            <div class="">
+                                <a href="/sign-up" class="btn btn-primary">Sign Up</a>
                             </div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                            
                         
-                        </form>
                     </div>
                 </div>
             </div>
