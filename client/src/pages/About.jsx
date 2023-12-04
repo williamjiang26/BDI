@@ -8,19 +8,20 @@ export default function About() {
   return (
     
     
+
       <section class="projects-section bg-light" id="projects">
+        <h1 className='text-center text-white'>About</h1>
             <div class="container px-4 px-lg-5">
-                <h1 className='text-3xl font-bold  mb-4 text-slate-800'>About</h1>
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
                     <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src={masthead} alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
+                        <div class="featured-text text-white text-center text-lg-left">
                             <h4>Tailored to Your Unique Journey </h4>
                             <p class="text-black-50 mb-0">We understand that everyone's experience with depression is unique. That's why our app employs cutting-edge technology to personalize your therapeutic journey. Through advanced algorithms and user input, we curate a customized plan that aligns with your specific needs, preferences, and goals.</p>
                         </div>
                     </div>
                 </div>
-                <h1 className='text-2xl font-bold  mb-4 text-slate-800'>
+                <h1 className='text-2xl font-bold text-white mb-4 text-slate-800'>
                 Features to Brighten Your Day
                 </h1>
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
@@ -77,6 +78,7 @@ export default function About() {
                 </div>
             </div>
       </section>
+    
      
     
   );

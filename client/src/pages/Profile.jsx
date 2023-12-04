@@ -108,8 +108,9 @@ export default function Profile() {
     }
   };
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
+    <div className='masthead'>
+    <div className='p-3 max-w-lg mx-auto '>
+    <h4 className='text-center text-white fw-bold'>Profile</h4>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='file'
@@ -186,5 +187,6 @@ export default function Profile() {
         {updateSuccess && 'User is updated successfully!'}
       </p>
     </div>
+  </div>
   );
 }

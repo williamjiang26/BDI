@@ -35,6 +35,7 @@ export default function BDI(){
     try {
         content = 
         <>
+        
             <h4>Beck's Depression Inventory</h4>
             <h4>Counter: {sum}</h4>
             <div>
@@ -60,7 +61,14 @@ export default function BDI(){
             setSum(sum + i)
             setCount(count + 1)
     }
-    return (content)
+    return (
+        <header class="masthead">
+            <div class="container justify-content-center">
+                {content}
+            </div>
+            
+        </header>
+        )
   }
   
   
