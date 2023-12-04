@@ -1,45 +1,17 @@
 import React from "react"
 import lionImage from '../../images/lion.jpeg'
-import {TreatmentHeader} from '../../components/Header';
+import {LeftBox, RightBox} from '../Treatment'
 
 export default function App(){
     return(
-        <div class="container">
-            <p class="treatment">Sleep Hygiene </p>
-            <img src={lionImage} alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Offer guidance on improving sleep habits and addressing insomnia.
-    - Provide tools for tracking sleep patterns and identifying potential issues.
-            </div>  
-            <p class="treatment">Physical Activity Integration </p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Encourage regular exercise through workout plans or activity tracking.
-    - Highlight the link between physical activity and mental well-being.
-            </div>  
-            <p class="treatment">Emergency Support</p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Include crisis intervention resources, such as helplines and crisis text lines.
-    - Implement safety planning tools for users at risk of self-harm.
-            </div>  
-            <p class="treatment">Progress Tracking</p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Provide visualizations of users' progress over time.
-    - Use data analytics to identify patterns and offer personalized recommendations.
-
-            </div>  
-            <div class="video-container">
-                <iframe width="840" height="630"
-                    src="https://www.youtube.com/embed/bcW6HOJr5Cg?si=IQZa55O6ESHxW_eW">
-                </iframe>
+        <div class="treatment-section">
+            <LeftBox image={sleepHygieneImage} heading="Sleep Hygiene" text="Practices promoting healthy sleep patterns and routines. Focus on optimizing the sleep environment, bedtime rituals, and habits to enhance quality rest and overall well-being."/>
+            <RightBox image={physicalActivityImage} heading="Physical Activity Integration" text="Incorporating exercise into daily routines. Encourage movement and physical well-being, improving mood, reducing stress, and enhancing overall health."/>
+            <LeftBox image={emergencySupportImage} heading="Emergency Support" text="Strategies and resources for immediate crisis management. Provide guidance, emergency contacts, and coping mechanisms during critical situations."/>
+            <RightBox image={progressTrackingImage} heading="Progress Tracking" text="Tools to monitor and assess treatment progress. Enable individuals and therapists to track improvements, adjust strategies, and celebrate milestones."/>
+            <div className="button-container">
+                <a href="/graph" className="btn btn-white btn-animate ">View Graph</a>
             </div>
-            <TreatmentHeader/>
         </div>
 
     )

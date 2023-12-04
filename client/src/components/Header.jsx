@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react';
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
-  const [isNavShrunk, setIsNavShrunk] = useState(false);
-
- 
-
   return (
     <section className='header-section'>
       <div className="flex justify-between items-center mx-auto p-3 header">
@@ -41,28 +36,4 @@ export default function Header() {
 }
 
 
-export function TreatmentHeader(){
-  return (
-    
-    <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
-        <Link to='/'>
-          <h1 className='font-bold' href = "/">Qilin Therapeudics</h1>
-        </Link>
-    <ul className='flex gap-4'>
-        <div className='flex justify-between items-center max-w-6xl mx-auto p-3 highlightTextIn container'>
-        <Link to='/graph'>
-            <li><a alt='Graph'>Graph</a></li>
-          </Link>
-          
-          <Link to='/contact'>
-            <li><a alt='Contact Us'>Contact Us</a></li>
-          </Link>
-          
-          <Link to='/treatments'>
-            <li><a alt='Treatments'>Treatments</a></li>
-          </Link>
-        </div>
-    </ul>
-    </div>
-  )
-}
+

@@ -1,48 +1,17 @@
 import React from "react"
 import lionImage from '../../images/lion.jpeg'
-import {TreatmentHeader} from '../../components/Header';
+import {LeftBox, RightBox} from '../Treatment'
 
 export default function App(){
     return(
-        <div class="container">
-            <p class="treatment">Medication Management</p>
-            <img src={lionImage} alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Include features for users to track their medication schedules.
-   - Provide educational content about medications commonly used to treat depression.
-
-            </div>  
-            <p class="treatment">Activity Planning </p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Assist users in scheduling and tracking daily activities to promote a healthy routine.
-   - Include reminders for important tasks and self-care activities.
-
-            </div>  
-            <p class="treatment">Goal Tracking</p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Allow users to set and track personal goals for mental health improvement.
-    - Provide positive reinforcement for achieving milestones.
-
-            </div>  
-            <p class="treatment">Positive Psychology Exercises</p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Integrate exercises that focus on strengths, gratitude, and positive affirmations.
-    - Promote activities that foster a sense of accomplishment and well-being.
-
-            </div>  
-            <div class="video-container">
-                <iframe width="840" height="630"
-                    src="https://www.youtube.com/embed/bcW6HOJr5Cg?si=IQZa55O6ESHxW_eW">
-                </iframe>
+        <div class="treatment-section">
+            <LeftBox image={medicationImage} heading="Medication Management" text="Structured plans for medication intake, dosage, and progress tracking. Support individuals in adhering to prescribed medications, ensuring consistency and efficacy."/>
+            <RightBox image={activityPlanningImage} heading="Activity Planning" text="Structured scheduling of meaningful and enjoyable activities. Aimed at combating inertia, promoting engagement, and restoring vitality."/>
+            <LeftBox image={goalTrackingImage} heading="Goal Tracking" text="Tools for setting, monitoring, and achieving personal objectives. Foster motivation, accountability, and a sense of accomplishment."/>
+            <RightBox image={positivePsychologyImage} heading="Positive Psychology Exercises" text="Activities emphasizing strengths, gratitude, and positive emotions. Enhance well-being by focusing on optimism, resilience, and personal growth."/>
+            <div className="button-container">
+                <a href="/graph" className="btn btn-white btn-animate ">View Graph</a>
             </div>
-            <TreatmentHeader/>
         </div>
 
     )

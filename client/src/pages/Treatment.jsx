@@ -84,3 +84,30 @@ export default function Treatments(){
         </>
     )
 }
+export function LeftBox({image, heading, text}){
+    return(<div class = "box">
+    <img class= "img-thumbnail " src={image} alt="Description"/>
+        <div class="content-left">
+            <p class="treatment ">{heading}</p>
+            {text}        
+        </div>  
+    </div>
+   )
+}
+export function RightBox({image, heading, text}){
+    return(
+    <div class = "box">
+        <div class="content-right">
+        <p class="treatment">{heading}</p>
+        {text}
+        </div>  
+        <img class= "img-thumbnail" src={image} alt="Description"/>
+    </div>)
+}
+export function Video({link}){
+    return (<div class="video-container">
+    <iframe width="600" height="400"
+        src={link}>
+    </iframe>
+</div>)
+}

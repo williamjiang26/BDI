@@ -66,12 +66,12 @@ function App() {
 
 
   return (
-    <div>
-        <button className='text-white border-2 border-white rounded-lg p-2 uppercase hover:opacity-95' onClick={handleFetch}>
+    <div className='treatment-section button-container'>
+        <a href= '' className='btn btn-white btn-animate' onClick={handleFetch}>
         Fetch
-        </button>
+        </a>
         <br/>
-        <br/>
+        
     <Plot
         data={[bdiData, heatmap]}
         layout={

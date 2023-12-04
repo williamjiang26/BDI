@@ -1,8 +1,12 @@
 import React from "react"
-import {TreatmentHeader} from '../../components/Header';
 
 export default function App(){
     return(
-        <>Do Nothing</>
+        <>Do Nothing
+            <div className="button-container">
+                <a href="/graph" className="btn btn-white btn-animate ">View Graph</a>
+            </div>
+        </>
+        
     )
 }

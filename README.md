@@ -1,6 +1,8 @@
 # BDI
 todo
-- carousel
+- scroll header
+- graph 
+- treatment css
 - treatment pages
 
 notes

@@ -1,41 +1,17 @@
 import React from "react"
 import lionImage from '../../images/lion.jpeg'
-import {TreatmentHeader} from '../../components/Header';
+import {LeftBox, RightBox} from '../Treatment'
 
 export default function App(){
     return(
-        <div class="container">
-            <p class="treatment">CBT Exercises </p>
-            <img src={lionImage} alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Apps integrate CBT exercises that guide users through structured activities designed to identify and challenge negative thought patterns. For example, users might be prompted to record their negative thoughts and then explore the evidence supporting or contradicting those thoughts.
-            </div>  
-            <p class="treatment">Thought Journals </p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Users are encouraged to maintain thought journals, where they can document their automatic, negative thoughts as they occur. The app assists in analyzing these thoughts and identifying cognitive distortions, such as black-and-white thinking or catastrophizing.
-            </div>  
-            <p class="treatment">Behavioral Activation </p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Apps often include components related to behavioral activation, a core aspect of CBT. Users are encouraged to engage in activities that bring them a sense of achievement and pleasure, even when they don't feel like it. The app may help users schedule and monitor these activities.
-            </div>  
-            <p class="treatment">Coping Strategies</p>
-            <img src="" alt="Description"/>
-            <div class="content">
-                <p class="description"/>
-                - Users learn a range of coping strategies that help them manage distressing emotions. These strategies may include relaxation techniques, problem-solving skills, and stress management tools.
-            </div>  
-            <div class="video-container">
-                <iframe width="840" height="630"
-                    src="https://www.youtube.com/embed/bcW6HOJr5Cg?si=IQZa55O6ESHxW_eW">
-                </iframe>
+        <div class="treatment-section">
+            <LeftBox image={lionImage} heading="CBT Exercises" text="CBT exercises form a transformative toolkit, unraveling thought-behavior connections. Through techniques like cognitive restructuring and behavioral interventions, they reframe negative thoughts, alter behaviors, and enhance self-awareness. These exercises, incorporating mindfulness and relaxation, equip individuals with practical strategies to challenge unhelpful patterns. Personalized and practical, they empower resilient mindsets, fostering adaptive responses and real-life problem-solving skills, ultimately guiding individuals towards emotional balance and lasting positive change."/>
+            <RightBox image={lionImage} heading="Thought Journals" text="Thought Journals are insightful tools capturing the intricate interplay between thoughts, emotions, and actions in a concise format. By documenting specific situations, associated emotions, automatic thoughts, and resulting behaviors, they unveil patterns. These journals prompt reflection, encouraging individuals to identify cognitive distortions and challenge them with rational alternatives. They empower self-awareness, offering a structured means to dissect and reframe thoughts, fostering resilience and informed decision-making. Thought Journals serve as personal compasses, guiding individuals towards a deeper understanding of their mental landscapes, empowering them to navigate challenges with clarity and purpose."/>
+            <LeftBox image={lionImage} heading="Behavioral Activation" text="Behavioral Activation sparks transformative change by re-engaging individuals in meaningful activities, elevating mood and restoring vitality. Focused on scheduling and implementing positive behaviors aligned with personal values, it combats depression's inertia. By breaking the cycle of avoidance, it fosters gradual exposure to enjoyable or fulfilling tasks, boosting confidence and self-efficacy. This approach encourages small, achievable steps, cultivating a sense of accomplishment and purpose. Behavioral Activation acts as a catalyst for momentum, reshaping routines, and reviving enthusiasm for life, ultimately restoring balance by reconnecting individuals with the vibrant fabric of their everyday experiences."/>
+            <RightBox image={lionImage} heading="Coping Strategies" text="Coping strategies are versatile tools empowering individuals to navigate life's challenges with resilience and adaptability. They encompass a spectrum of techniques—ranging from mindfulness to problem-solving and social support—that bolster emotional well-being. Mindfulness practices cultivate present-moment awareness, fostering calm amidst chaos. Problem-solving strategies equip individuals with structured approaches to overcome obstacles, promoting effective decision-making. Social support encourages seeking help and connection, providing a vital safety net during adversity. Coping strategies, tailored to individual needs, serve as anchors, fortifying mental fortitude, and offering pathways to manage stress, build resilience, and navigate life's complexities with strength and grace."/>        
+            <div className="button-container">
+                <a href="/graph" className="btn btn-white btn-animate ">View Graph</a>
             </div>
-            <TreatmentHeader/>
         </div>
-
     )
 }
