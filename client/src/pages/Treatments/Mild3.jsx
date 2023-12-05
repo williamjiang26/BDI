@@ -1,5 +1,8 @@
 import React from "react"
-import lionImage from '../../images/lion.jpeg'
+import medicationImage from '../../images/meds.jpeg'
+import activityPlanningImage from '../../images/activity.jpeg'
+import goalTrackingImage from '../../images/goals.webp'
+import positivePsychologyImage from '../../images/pos.jpeg'
 import {LeftBox, RightBox} from '../Treatment'
 
 export default function App(){

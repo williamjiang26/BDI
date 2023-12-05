@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 export default function Treatments(){
     return (
-        <>
-            <h1> <a style={{ color: 'red' }}>Severity levels:</a> Not Severe</h1>
+        <div className="lion button-container">
+            <h1 className="text-white"> <a style={{ color: 'red' }}>Severity levels:</a> Not Severe</h1>
                 <Link to='/nonsevere'>
                     <a alt='Not Severe'>Not Severe</a>
                 </Link>  
 
-                <h1> <a style={{ color: 'red' }}>Severity levels:</a> Mild mood disturbances</h1>
+                <h1 className="text-white"> <a style={{ color: 'red' }}>Severity levels:</a> Mild mood disturbances</h1>
                 <ol>
                     <li>
                        <Link to='/mild1'>
@@ -31,7 +31,7 @@ export default function Treatments(){
                             <a alt='Mild 4'>Mild 4</a>
                         </Link>  
                 </li>
-            <h1> <a style={{ color: 'red' }}>Severity levels:</a> Moderate depression</h1>
+            <h1 className="text-white"> <a style={{ color: 'red' }}>Severity levels:</a> Moderate depression</h1>
                 <ol>
                     <li>
                        <Link to='/moderate1'>
@@ -54,7 +54,7 @@ export default function Treatments(){
                         </Link>  
                    </li>
                 </ol>
-                <h1> <a style={{ color: 'red' }}>Severity levels:</a> Borderline clinical depression</h1>
+                <h1 className="text-white"> <a style={{ color: 'red' }}>Severity levels:</a> Borderline clinical depression</h1>
                     <li>
                        <Link to='/borderline1'>
                             <a alt='Borderline 1'>Borderline 1</a>
@@ -77,11 +77,11 @@ export default function Treatments(){
                     </li>
                    
                 </ol>
-<h1> <a style={{ color: 'red' }}>Severity levels:</a> Most Severe</h1>    
+            <h1 className="text-white"> <a style={{ color: 'red' }}>Severity levels:</a> Most Severe</h1>    
                 <Link to='/severe'>
                     <a alt='Severe'>Severe</a>
                 </Link>  
-        </>
+        </div>
     )
 }
 export function LeftBox({image, heading, text}){
