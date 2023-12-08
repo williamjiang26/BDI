@@ -71,47 +71,50 @@ function App() {
         Fetch
         </a>
         <br/>
-        
-    <Plot
-        data={[bdiData, heatmap]}
-        layout={
-            {title: "BDI Scores Timeline",
-            xaxis: {
-                title: "BDI Test Date",
-                range: [bdiData.x[0], bdiData.x[bdiData.x.length - 1]],
-                rangeselector: {buttons: [
-                {
-                    count: 1,
-                    label: '1m',
-                    step: 'month',
-                    stepmode: 'backward'
-                },
-                {
-                    count: 3,
-                    label: '3m',
-                    step: 'month',
-                    stepmode: 'backward'
-                },
-                {
-                    count: 6,
-                    label: '6m',
-                    step: 'month',
-                    stepmode: 'backward'
-                },
-                {step: 'all'}
-                ]},
-            rangeslider: {
-                visible: true,
-                range: [bdiData.x[0], bdiData.x[bdiData.x.length - 1]]
-            },
-            type: 'date'
-            },
-            yaxis: { 
-                title: "BDI Score",
-                autorange: true
-            }}
-        }
-    />
+
+        <div className= 'graph'>
+            <Plot
+                data={[bdiData, heatmap]}
+                layout={
+                    {title: "BDI Scores Timeline",
+                    xaxis: {
+                        title: "BDI Test Date",
+                        range: [bdiData.x[0], bdiData.x[bdiData.x.length - 1]],
+                        rangeselector: {buttons: [
+                        {
+                            count: 1,
+                            label: '1m',
+                            step: 'month',
+                            stepmode: 'backward'
+                        },
+                        {
+                            count: 3,
+                            label: '3m',
+                            step: 'month',
+                            stepmode: 'backward'
+                        },
+                        {
+                            count: 6,
+                            label: '6m',
+                            step: 'month',
+                            stepmode: 'backward'
+                        },
+                        {step: 'all'}
+                        ]},
+                    rangeslider: {
+                        visible: true,
+                        range: [bdiData.x[0], bdiData.x[bdiData.x.length - 1]]
+                    },
+                    type: 'date'
+                    },
+                    yaxis: { 
+                        title: "BDI Score",
+                        autorange: true
+                    }}
+                }
+            />
+        </div>
+
     </div>
     );
 }

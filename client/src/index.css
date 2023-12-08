@@ -23,6 +23,10 @@ body {
   text-align: center;
 }
 
+.graph{
+  padding-bottom: 20em;
+}
+
 /* navbar css */
 
 div.container
