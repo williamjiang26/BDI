@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <section className='header-section'>
       <div className="flex justify-between items-center mx-auto p-3 ">
-      <a href="/" class="font-bold no-underline logo">Qilin Therapeutics</a>       
+      <a href="/" class="font-bold no-underline logo">Qilin Therapy</a>       
        <ul className='flex gap-4'>
           <div className='flex justify-between items-center max-w-6xl mx-auto p-3 highlightTextIn container'>
             <Link to='/'>

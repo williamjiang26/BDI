@@ -17,7 +17,7 @@ export default function About() {
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-white text-center text-lg-left">
                             <h4>Tailored to Your Unique Journey </h4>
-                            <p class="text-black-50 mb-0">We understand that everyone's experience with depression is unique. That's why our app employs cutting-edge technology to personalize your therapeutic journey. Through advanced algorithms and user input, we curate a customized plan that aligns with your specific needs, preferences, and goals.</p>
+                            <p class="text-black-50 mb-0">We understand that everyone's experience with depression is unique. That's why our app employs cutting-edge technology to personalize your therapy journey. Through advanced algorithms and user input, we curate a customized plan that aligns with your specific needs, preferences, and goals.</p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export default function About() {
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
                                     <h4 class="text-white">Guided Activities</h4>
-                                    <p class="mb-0 text-white-50">Engage in evidence-based therapeutic activities, including mindfulness exercises, cognitive behavioral techniques, and mood tracking. Our guided activities are crafted by mental health professionals to help you build resilience and foster a positive mindset.</p>
+                                    <p class="mb-0 text-white-50">Engage in evidence-based therapy activities, including mindfulness exercises, cognitive behavioral techniques, and mood tracking. Our guided activities are crafted by mental health professionals to help you build resilience and foster a positive mindset.</p>
                                 </div>
                             </div>
                         </div>

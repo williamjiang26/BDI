@@ -8,7 +8,7 @@ export default function Home() {
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Qilin Therapeutics</h1>
+                        <h1 class="mx-auto my-0 text-uppercase">Qilin Therapy</h1>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">A handy solution to depression.</h2>
                         <a class="btn btn-primary" href="/bdi">Get Diagnosed</a>
                     </div>
@@ -20,12 +20,12 @@ export default function Home() {
             <div class="container px-2 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Welcome to Mobile Depression Therapy: Your Companion on the Journey to Mental Wellness</h2>
+                        <h2 class="text-white mb-4">Welcome to Qilin Therapy: Your Companion on the Journey to Mental Wellness</h2>
                         <p class="text-white-50">
       Life's challenges can be overwhelming, and at times, we all need a little extra support
-      to navigate through them. Mobile Depression Therapy is here to offer you a helping hand on your path to mental well-being. Our innovative and user-friendly mobile application is designed to provide convenient access to effective therapeutic tools, empowering you to manage and overcome depression right from the palm of your hand.
+      to navigate through them. Qilin Therapy is here to offer you a helping hand on your path to mental well-being. Our innovative and user-friendly mobile application is designed to provide convenient access to effective therapy tools, empowering you to manage and overcome depression right from the palm of your hand.
       Embrace Healing Anytime, Anywhere
-      Say goodbye to traditional barriers to therapy. With Mobile Depression Therapy, you have the freedom to access support whenever and wherever you need it. Our mobile app allows you to engage in therapeutic activities, receive personalized guidance, and track your progress seamlessly from the comfort of your own space.
+      Say goodbye to traditional barriers to therapy. With Qilin Therapy, you have the freedom to access support whenever and wherever you need it. Our mobile app allows you to engage in therapy activities, receive personalized guidance, and track your progress seamlessly from the comfort of your own space.
       
                             
                         </p>
@@ -95,9 +95,9 @@ export default function Home() {
         </section>
 
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Your Privacy Matters
-      Rest assured, your privacy is our priority. Mobile Depression Therapy is committed to maintaining the confidentiality of your information. Our secure platform ensures that your personal data is protected, allowing you to focus on your well-being with peace of mind.      
+      Rest assured, your privacy is our priority.  Qilin Therapy is committed to maintaining the confidentiality of your information. Our secure platform ensures that your personal data is protected, allowing you to focus on your well-being with peace of mind.      
       Join Us on the Path to Wellness
-      Embark on a transformative journey toward mental wellness with Mobile Depression Therapy. Copyright &copy; Qilins Co. 2023</div></footer>
+      Embark on a transformative journey toward mental wellness with Qilin Therapy. Copyright &copy; Qilins Co. 2023</div></footer>
   
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
